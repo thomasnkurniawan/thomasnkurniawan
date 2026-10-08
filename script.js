@@ -1,5 +1,6 @@
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".site-nav");
+const brandLink = document.querySelector(".site-header .brand");
 const printButton = document.querySelector("#print-resume");
 const yearLabel = document.querySelector("#current-year");
 const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
@@ -21,6 +22,8 @@ if (menuButton && navigation) {
   navigation.addEventListener("click", (event) => {
     if (event.target instanceof HTMLAnchorElement) closeMenu();
   });
+
+  brandLink?.addEventListener("click", closeMenu);
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMenu();
